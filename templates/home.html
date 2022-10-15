@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>week4作業</title>
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:3000/static/home.css"/>
+    </head>
+
+    <body>
+        <div class="home">
+            <div class="home_word"><b>歡迎光臨，請輸入帳號密碼</b></div>
+        </div>
+
+        <div class="login">
+            <form class="login_form" action="/signin" method="POST">
+                <div class="login_form_word"><b>登入系統</b></div>
+                <div class="login_form_account">
+                    帳號<input type="text" name="account" maxlength="10"/>
+                </div>
+
+                <div class="login_form_password">
+                    密碼<input type="password" name="password" maxlength="10"/>
+                </div>
+                <button>登入</button>
+            </form>
+        </div>
+
+        <hr/>
+
+        <div class="calculate">
+            <div class="calculate_form" >
+                <div class="calculate_form_word"><b>計算正整數的平方</b></div>
+                正整數<input type="text" name="number" class="calculate_form_input"/>
+                <br/>
+                <button class="calculate_form_button">計算</button>
+            </div>
+        </div>
+        
+        <script>
+            
+            function direction(){
+                let number = document.querySelector(".calculate_form_input").value
+                document.location.href = "http://127.0.0.1:3000/square/" + number
+            }
+
+            let cal = document.querySelector(".calculate_form_button")
+            console.log(cal)
+            cal.addEventListener("click",direction,false)
+        </script>
+
+    </body>
+</html>
